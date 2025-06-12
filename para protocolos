@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Tendencias en la Gestión de la Industria BIM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F5F1;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+        .flow-node {
+            border-color: #01949A;
+            background-color: #ffffff;
+            color: #004369;
+        }
+        .flow-arrow {
+            color: #01949A;
+        }
+        .swot-card {
+            border-color: #004369;
+            background-color: #ffffff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .swot-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="text-[#004369]">
+
+    <main class="container mx-auto p-4 sm:p-6 md:p-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#DB1F48] mb-4">Tendencias en la Gestión Estratégica de Departamentos BIM</h1>
+            <p class="max-w-3xl mx-auto text-lg">
+                Un análisis profundo sobre cómo la estandarización, la gestión de activos y el desarrollo continuo, basados en los principios de la ISO 19650, impulsan la eficiencia y el valor en la industria de la construcción.
+            </p>
+        </header>
+
+        <section id="metricas" class="mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center flex flex-col justify-center">
+                    <h2 class="text-5xl font-bold text-[#01949A] mb-2">45%</h2>
+                    <h3 class="text-lg font-semibold">Reducción en Tiempo de Arranque</h3>
+                    <p class="text-sm">Es la mejora promedio en la configuración inicial de proyectos al utilizar librerías y plantillas estandarizadas.</p>
+                    <button class="mt-3 bg-[#DB1F48] text-white py-2 px-4 rounded-lg shadow-md hover:bg-opacity-90 transition duration-300 spark-insight-btn" data-metric="Reducción en Tiempo de Arranque" data-value="45%" data-context="mejora promedio en la configuración inicial de proyectos al utilizar librerías y plantillas estandarizadas">✨ Ver Insight</button>
+                    <div class="insight-output text-left mt-3 p-3 bg-[#F8F5F1] border border-[#E5DDC8] rounded-md text-xs hidden"></div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center flex flex-col justify-center">
+                    <h2 class="text-5xl font-bold text-[#DB1F48] mb-2">90%</h2>
+                    <h3 class="text-lg font-semibold">Tasa de Adopción de Estándares</h3>
+                    <p class="text-sm">Porcentaje de proyectos que implementan con éxito los protocolos y nomenclaturas definidos por el departamento.</p>
+                    <button class="mt-3 bg-[#01949A] text-white py-2 px-4 rounded-lg shadow-md hover:bg-opacity-90 transition duration-300 spark-insight-btn" data-metric="Tasa de Adopción de Estándares" data-value="90%" data-context="porcentaje de proyectos que implementan con éxito los protocolos y nomenclaturas definidos por el departamento">✨ Ver Insight</button>
+                    <div class="insight-output text-left mt-3 p-3 bg-[#F8F5F1] border border-[#E5DDC8] rounded-md text-xs hidden"></div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 text-center flex flex-col justify-center">
+                    <h2 class="text-5xl font-bold text-[#01949A] mb-2">30%</h2>
+                    <h3 class="text-lg font-semibold">Mejora en la Calidad del Modelo</h3>
+                    <p class="text-sm">Disminución de inconsistencias y errores detectados en las primeras fases gracias a los checklists de control de calidad.</p>
+                    <button class="mt-3 bg-[#DB1F48] text-white py-2 px-4 rounded-lg shadow-md hover:bg-opacity-90 transition duration-300 spark-insight-btn" data-metric="Mejora en la Calidad del Modelo" data-value="30%" data-context="disminución de inconsistencias y errores detectados en las primeras fases gracias a los checklists de control de calidad">✨ Ver Insight</button>
+                    <div class="insight-output text-left mt-3 p-3 bg-[#F8F5F1] border border-[#E5DDC8] rounded-md text-xs hidden"></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <section id="recursos" class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold mb-2 text-[#004369]">Distribución de Esfuerzos del Departamento BIM</h2>
+                <p class="text-sm mb-4">
+                    Visualización de cómo se distribuye el tiempo y los recursos en las actividades clave del departamento. La mayor inversión se centra en la creación y mantenimiento de estándares y librerías, lo que demuestra su importancia estratégica como núcleo de la eficiencia.
+                </p>
+                <div class="chart-container">
+                    <canvas id="resourceAllocationChart"></canvas>
+                </div>
+                <p class="text-xs text-center mt-4">
+                    Este gráfico de dona muestra la proporción del esfuerzo departamental. La estandarización es la base para la automatización y la formación continua.
+                </p>
+            </section>
+
+            <section id="crecimiento" class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold mb-2 text-[#004369]">Crecimiento en la Adopción de Protocolos</h2>
+                <p class="text-sm mb-4">
+                    La implementación de protocolos estandarizados ha crecido de manera constante, lo que se correlaciona directamente con una mayor predictibilidad y una reducción de riesgos en la ejecución de proyectos a lo largo del tiempo.
+                </p>
+                <div class="chart-container">
+                    <canvas id="adoptionGrowthChart"></canvas>
+                </div>
+                <p class="text-xs text-center mt-4">
+                    La línea de tendencia ascendente indica una madurez creciente en la organización y una aceptación cultural de los procesos estandarizados.
+                </p>
+            </section>
+
+            <section id="eficiencia" class="bg-white rounded-lg shadow-lg p-6 lg:col-span-2">
+                <h2 class="text-2xl font-bold mb-2 text-[#004369]">Impacto de las Librerías en la Eficiencia del Proyecto</h2>
+                <p class="text-sm mb-4">
+                    Este análisis compara las horas de configuración de un proyecto típico utilizando un enfoque tradicional frente a uno basado en las librerías y plantillas estandarizadas del departamento BIM. El ahorro de tiempo en modelado y documentación es significativo.
+                </p>
+                <div class="chart-container h-[400px] max-h-[450px]">
+                    <canvas id="efficiencyImpactChart"></canvas>
+                </div>
+                <p class="text-xs text-center mt-4">
+                    El gráfico de barras apiladas cuantifica las horas ahorradas, demostrando el retorno de la inversión en la creación de contenido BIM reutilizable.
+                </p>
+            </section>
+
+            <section id="madurez" class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold mb-2 text-[#004369]">Flujo de Madurez del Departamento BIM</h2>
+                <p class="text-sm mb-4">Un departamento BIM evoluciona a través de varias etapas, desde la gestión de herramientas básicas hasta convertirse en un motor de innovación y desarrollo para toda la organización.</p>
+                <div class="flex flex-col items-center space-y-2">
+                    <div class="flow-node border-2 rounded-lg p-3 w-full text-center"><strong>1. Gestión de Herramientas y Software</strong><p class="text-xs">Control de licencias y plugins.</p></div>
+                    <div class="flow-arrow text-2xl font-bold">&darr;</div>
+                    <div class="flow-node border-2 rounded-lg p-3 w-full text-center"><strong>2. Creación de Estándares y Librerías</strong><p class="text-xs">Desarrollo de protocolos, plantillas y familias.</p></div>
+                    <div class="flow-arrow text-2xl font-bold">&darr;</div>
+                    <div class="flow-node border-2 rounded-lg p-3 w-full text-center"><strong>3. Capacitación y Desarrollo del Equipo</strong><p class="text-xs">Formación interna y mejora continua.</p></div>
+                    <div class="flow-arrow text-2xl font-bold">&darr;</div>
+                    <div class="flow-node border-2 rounded-lg p-3 w-full text-center"><strong>4. Innovación e I+D</strong><p class="text-xs">Automatización, pruebas y desarrollo de nuevas metodologías.</p></div>
+                </div>
+                <p class="text-xs text-center mt-4">
+                    Este flujo representa un camino hacia la excelencia operativa, donde cada etapa se construye sobre la anterior para maximizar el valor.
+                </p>
+            </section>
+
+            <section id="futuro" class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold mb-2 text-[#004369]">Áreas de Enfoque para el Futuro</h2>
+                <p class="text-sm mb-4">
+                    El análisis de tendencias y capacidades internas sugiere que las futuras inversiones estratégicas deben centrarse en la automatización de procesos, la integración de datos y la investigación de nuevas tecnologías para mantener la ventaja competitiva.
+                </p>
+                <div class="chart-container">
+                    <canvas id="futureFocusChart"></canvas>
+                </div>
+                <p class="text-xs text-center mt-4">
+                    El gráfico de radar compara la importancia percibida y el nivel de madurez actual en áreas estratégicas clave para guiar la toma de decisiones.
+                </p>
+                <button id="generateRecommendationsBtn" class="mt-6 w-full bg-[#01949A] text-white py-2 px-4 rounded-lg shadow-md hover:bg-opacity-90 transition duration-300">✨ Generar Recomendaciones Estratégicas</button>
+                <div id="recommendationsOutput" class="mt-4 p-4 bg-[#E5DDC8] rounded-lg text-sm text-[#004369] hidden"></div>
+            </section>
+        </div>
+
+        <footer class="text-center mt-12 pt-8 border-t border-[#E5DDC8]">
+            <p class="text-lg font-semibold">Conclusión Estratégica</p>
+            <p class="max-w-3xl mx-auto text-sm">
+                Un departamento BIM estructurado no es solo un centro de costos de software y personal; es un activo estratégico que impulsa la eficiencia, la calidad y la innovación. Invertir en estándares, librerías y desarrollo de talento es fundamental para capitalizar el verdadero potencial de la metodología BIM en la industria.
+            </p>
+        </footer>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const wrapLabel = (label, maxWidth = 16) => {
+                if (label.length <= maxWidth) {
+                    return label;
+                }
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + ' ' + word).trim().length > maxWidth) {
+                        lines.push(currentLine.trim());
+                        currentLine = word;
+                    } else {
+                        currentLine = (currentLine + ' ' + word).trim();
+                    }
+                });
+                if (currentLine) {
+                    lines.push(currentLine.trim());
+                }
+                return lines;
+            };
+
+            const tooltipCallbacks = {
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            color: '#004369',
+                            font: {
+                                size: 12
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                return Array.isArray(label) ? label.join(' ') : label;
+                            }
+                        }
+                    }
+                }
+            };
+            
+            const CHART_COLORS = {
+                blue: '#004369',
+                teal: '#01949A',
+                red: '#DB1F48',
+                beige: '#E5DDC8'
+            };
+
+            const resourceAllocationCtx = document.getElementById('resourceAllocationChart');
+            if(resourceAllocationCtx) {
+                new Chart(resourceAllocationCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Estándares y Protocolos', 'Librerías y Contenido', 'Capacitación y Desarrollo', wrapLabel('Herramientas y Automatización'), 'Gestión y Administración'],
+                        datasets: [{
+                            label: 'Distribución de Esfuerzos',
+                            data: [35, 30, 15, 15, 5],
+                            backgroundColor: [CHART_COLORS.blue, CHART_COLORS.teal, CHART_COLORS.red, '#5B8C5A', '#F2C14E'],
+                            borderColor: '#F8F5F1',
+                            borderWidth: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        ...tooltipCallbacks,
+                        cutout: '60%',
+                    }
+                });
+            }
+
+            const adoptionGrowthCtx = document.getElementById('adoptionGrowthChart');
+            if(adoptionGrowthCtx) {
+                new Chart(adoptionGrowthCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['2021', '2022', '2023', '2024', '2025 (Proy.)'],
+                        datasets: [{
+                            label: 'Tasa de Adopción de Protocolos (%)',
+                            data: [45, 60, 75, 90, 95],
+                            fill: true,
+                            backgroundColor: 'rgba(219, 31, 72, 0.2)',
+                            borderColor: CHART_COLORS.red,
+                            tension: 0.4,
+                            pointBackgroundColor: CHART_COLORS.red,
+                            pointBorderColor: '#fff',
+                            pointHoverRadius: 7,
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: CHART_COLORS.red
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        ...tooltipCallbacks,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: 100,
+                                grid: { color: '#E5DDC8' },
+                                ticks: { color: '#004369' }
+                            },
+                            x: {
+                                grid: { display: false },
+                                ticks: { color: '#004369' }
+                            }
+                        }
+                    }
+                });
+            }
+
+            const efficiencyImpactCtx = document.getElementById('efficiencyImpactChart');
+            if(efficiencyImpactCtx) {
+                new Chart(efficiencyImpactCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: [wrapLabel('Fase 1: Configuración y Modelado Inicial'), wrapLabel('Fase 2: Desarrollo y Documentación'), wrapLabel('Fase 3: Coordinación y Revisión')],
+                        datasets: [
+                            {
+                                label: 'Horas Ahorradas (Con Librerías)',
+                                data: [60, 120, 40],
+                                backgroundColor: CHART_COLORS.teal,
+                            },
+                            {
+                                label: 'Horas Restantes (Trabajo Específico)',
+                                data: [20, 80, 20],
+                                backgroundColor: CHART_COLORS.beige,
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        ...tooltipCallbacks,
+                        scales: {
+                            x: { stacked: true, grid: { display: false }, ticks: { color: '#004369' } },
+                            y: { stacked: true, grid: { color: '#E5DDC8' }, ticks: { color: '#004369' }, title: { display: true, text: 'Horas de Trabajo', color: '#004369' } }
+                        },
+                        plugins: {
+                            ...tooltipCallbacks.plugins,
+                            tooltip: {
+                                ...tooltipCallbacks.plugins.tooltip,
+                                mode: 'index',
+                                intersect: false
+                            }
+                        }
+                    }
+                });
+            }
+            
+            const futureFocusCtx = document.getElementById('futureFocusChart');
+            if(futureFocusCtx) {
+                new Chart(futureFocusCtx, {
+                    type: 'radar',
+                    data: {
+                        labels: [wrapLabel('Automatización de Tareas'), 'I+D Nuevas Tecnologías', wrapLabel('Integración con Power BI'), wrapLabel('Capacitación Avanzada'), wrapLabel('Desarrollo de Contenido Paramétrico')],
+                        datasets: [
+                            {
+                                label: 'Importancia Estratégica',
+                                data: [9, 8, 7, 7, 9],
+                                backgroundColor: 'rgba(0, 67, 105, 0.4)',
+                                borderColor: CHART_COLORS.blue,
+                                pointBackgroundColor: CHART_COLORS.blue
+                            },
+                            {
+                                label: 'Madurez Actual',
+                                data: [5, 4, 6, 7, 8],
+                                backgroundColor: 'rgba(219, 31, 72, 0.4)',
+                                borderColor: CHART_COLORS.red,
+                                pointBackgroundColor: CHART_COLORS.red
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        ...tooltipCallbacks,
+                        scales: {
+                            r: {
+                                beginAtZero: true,
+                                max: 10,
+                                pointLabels: {
+                                    font: { size: 10 },
+                                    color: '#004369'
+                                },
+                                grid: { color: '#E5DDC8' },
+                                angleLines: { color: '#E5DDC8' }
+                            }
+                        }
+                    }
+                });
+            }
+
+            async function callGemini(prompt, targetElement, loadingMessage = 'Generando insight...') {
+                targetElement.innerHTML = `<span class="animate-pulse">${loadingMessage}</span>`;
+                targetElement.classList.remove('hidden');
+
+                try {
+                    const chatHistory = [];
+                    chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                    const payload = { contents: chatHistory };
+                    const apiKey = ""; 
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const result = await response.json();
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        targetElement.innerHTML = text;
+                    } else {
+                        targetElement.innerHTML = 'Error: No se pudo generar la respuesta.';
+                    }
+                } catch (error) {
+                    targetElement.innerHTML = `Error al conectar con la IA: ${error.message}`;
+                }
+            }
+
+            document.getElementById('generateRecommendationsBtn').addEventListener('click', async () => {
+                const recommendationsOutput = document.getElementById('recommendationsOutput');
+                const chartData = {
+                    'Automatización de Tareas': { importance: 9, maturity: 5 },
+                    'I+D Nuevas Tecnologías': { importance: 8, maturity: 4 },
+                    'Integración con Power BI': { importance: 7, maturity: 6 },
+                    'Capacitación Avanzada': { importance: 7, maturity: 7 },
+                    'Desarrollo de Contenido Paramétrico': { importance: 9, maturity: 8 }
+                };
+                let prompt = "Basado en los siguientes datos de Importancia Estratégica vs. Madurez Actual para un Departamento BIM (donde la importancia y madurez se miden en una escala de 1 a 10):\n";
+                for (const [key, value] of Object.entries(chartData)) {
+                    prompt += `- ${key}: Importancia = ${value.importance}, Madurez = ${value.maturity}\n`;
+                }
+                prompt += "\nGenera 3-5 recomendaciones estratégicas concisas y accionables para mejorar la madurez del departamento en las áreas de alta importancia y baja madurez. Enfócate en pasos prácticos y asignación de recursos. Responde solo en español. Presenta las recomendaciones como una lista numerada.";
+
+                await callGemini(prompt, recommendationsOutput, 'Generando recomendaciones estratégicas...');
+            });
+
+            document.querySelectorAll('.spark-insight-btn').forEach(button => {
+                button.addEventListener('click', async () => {
+                    const metric = button.dataset.metric;
+                    const value = button.dataset.value;
+                    const context = button.dataset.context;
+                    const insightOutput = button.nextElementSibling;
+
+                    const prompt = `Explica la importancia de un "${value}" para "${metric}" en el contexto de un departamento BIM, considerando que es una ${context}. ¿Por qué esta métrica es importante para las tendencias de la industria y la investigación de mercado? Proporciona un insight conciso de un párrafo en español.`;
+                    
+                    await callGemini(prompt, insightOutput, 'Obteniendo insight contextual...');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
